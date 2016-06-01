@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CalendarApp" id="top">
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/custom.css" media="screen,projection"/>
+
+        <!--For Calendar -->
+        <link rel="icon" href="favicon.ico" />
+        <!-- <link rel="stylesheet" href="./components/bootstrap-css/css/bootstrap.css" /> -->
+        <link rel="stylesheet" href="./components/fullcalendar/dist/fullcalendar.css">
+        <link rel="stylesheet" href="./css/calendar_custom.css" />
+
+        <script src="./components/jquery/dist/jquery.js"></script>
+
+        <script src="./components/angular/angular.js"></script>
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+        <script src="./components/moment/moment.js"></script>
+        <script src="./components/fullcalendar/dist/fullcalendar.js"></script>
+        <script src="./components/fullcalendar/dist/gcal.js"></script>
+        <script src="./src/calendar.js"></script>
+        <script src="./js/calendar_custom.js"></script>
+
+        <script>
+
+        </script>
+
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <!--Import jQuery before materialize.js-->
+        <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <nav class="teal">
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="color:black">menu</i></a>
+            <ul id="slide-out" class="side-nav fixed">
+                <div class="side-nav_logo">
+                    <a href="./home.html" class="center">
+                    <img src="http://placehold.it/80x80">
+                    </a>
+                </div>
+                <ul class="section table-of-contents">
+
+                    <li><a href="#" class="waves-effect waves-teal">About Me</a></li>
+                    <li><a href="#" class="waves-effect waves-teal">Passions</a></li>
+                    <li><a href="#" class="waves-effect waves-teal">Treasure Chest</a></li>
+                    <li><a href="#" class="waves-effect waves-teal">Calendar</a></li>
+                    <li><a href="#" class="waves-effect waves-teal">Hone My Skills</a></li>
+                    <li><a href="#" class="waves-effect waves-teal">What's New</a></li>
+
+                    <li><a href="#" class="waves-effect waves-teal hide-on-large-only">Home</a></li>
+                    <li><a href="#" class="waves-effect waves-teal hide-on-large-only">Info</a></li>
+                    <li><a href="#" class="waves-effect waves-teal hide-on-large-only">Questions</a></li>
+                    <li><a href="#" class="waves-effect waves-teal hide-on-large-only">Settings</a></li>
+                </ul>
+            </ul>
+            <div class="nav-wrapper">
+                <div href="#!" class="brand-logo hide-on-large-only"></div>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" class="waves-effect waves-teal">Home</a></li>
+                    <li><a href="#" class="waves-effect waves-teal">Info</a></li>
+                    <li><a href="#" class="waves-effect waves-teal">Questions</a></li>
+                    <li><a href="#" class="waves-effect waves-teal">Settings</a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+          <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+        <main>
+            <h4>Flexiple Calender</h4>
+            <section id="directives-calendar" ng-controller="CalendarCtrl" class="container">
+
+              <div class="" ng-show="alertMessage != undefined && alertMessage != ''">
+                <h4>{{alertMessage}}</h4>
+              </div>
+
+                <div class="">
+                    <button class="right" ng-click="changeView('agendaDay', 'myCalendar')">Day</button>
+                    <button class="right" ng-click="changeView('agendaWeek', 'myCalendar')">Week</button>
+                    <button class="right" ng-click="changeView('month', 'myCalendar')">Month</button>
+                </div>
+
+
+            <div class="calendar" ng-model="eventSources" calendar="myCalendar" ui-calendar="uiConfig.calendar"></div>
+
+
+                        
+            <div class="">
+
+              <button type="button" class="modal-trigger" ng-click="addEvent()" href = "#modal1">
+                Add Event
+              </button>
+            </div>
+
+<!--             <ul >
+                <li ng-repeat="e in events">
+                    <div class="">
+                        <a class="close" ng-click="remove($index)"><i class="icon-remove"></i></a>
+                        <input ng-model="e.title">
+                        {{e.start | date:"MMM dd"}} - {{e.end | date:"MMM dd"}}
+                    </div>
+                </li>
+            </ul> -->
+
+
+
+        </section>
+
+        </main>
+
+        <footer class="page-footer teal">
+
+        </footer>
+    </body>
+</html>

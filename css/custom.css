@@ -1,0 +1,51 @@
+.calendar{font-size: 2px !important:}
+
+
+header,nav, main, footer {
+ padding-left: 240px;
+}
+
+@media only screen and (max-width: 992px) {
+  header,nav, main, footer {
+    padding-left: 0px;
+  }
+}
+
+
+.side-nav_logo {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+
+/*body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; 
+}
+*/
+/*main{
+  flex: 1 0 auto; 
+}*/
+
+
+nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  /*z-index: 3; */
+}
+
+.side-nav {
+  background-color: #455a64 !important;
+  /*z-index: 4; */
+}
+.side-nav ul li a {
+    color: white !important; 
+}
+
+.side-nav ul li:hover {
+    background-color: #00B9D8 !important; 
+}
+
+
+
+
